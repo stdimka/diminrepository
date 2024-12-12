@@ -1,4 +1,3 @@
-
 # list1 = ["Alice", "Bob", "Charlie"]
 # list2 = [25, 30, 35]
 #
@@ -90,3 +89,123 @@
 #
 # for i in range(10):
 #     print(i)
+
+# def my_decorator(func):
+#     def wrapper():
+#         print("Перед вызовом функции")
+#         func()
+#         print("После вызова функции")
+#
+#     return wrapper
+# @my_decorator
+# def say_hello():
+#     print("Hello!")
+# say_hello()
+
+# def repeat(num_times):
+#     def decorator_repeat(func):
+#         def wrapper(*args, **kwargs):
+#             for _ in range(num_times):
+#                 func(*args, **kwargs)
+#
+#         return wrapper
+#
+#     return decorator_repeat
+# @repeat(num_times=5)
+# def say_hello(name):
+#     print(f"Hello, {name}!")
+# say_hello("Alice")
+
+
+# def my_decorator(func):
+#     def wrapper():
+#         print("Перед вызовом функции")
+#         func()
+#         print("После вызова функции")
+#
+#     return wrapper
+#
+# @my_decorator
+# def say_hello():
+#     print("Hello!")
+#
+# say_hello()
+
+# class MyClass:
+#     def __init__(self, value):
+#         self.hidden_value = value
+#
+#     @property
+#     def value(self):
+#         return self.hidden_value
+#
+#     @value.setter
+#     def value(self, new_value):
+#         self.hidden_value = new_value
+#
+# obj = MyClass(10)
+# print(obj.value)  # Вывод: 10
+# obj.value = 20
+# print(obj.value)  # Вывод: 20
+
+# import platform
+#
+# os_name = platform.system()
+# print("Operating System:", os_name)
+#
+# architecture = platform.architecture()
+# print("Architecture:", architecture)
+# processor = platform.processor()
+# print("Processor:", processor)
+#
+# import sys
+#
+# # Список загруженных модулей
+# print("Загруженные модули:")
+# for module in sys.modules:
+#     print(module)
+
+import os
+
+# import os
+#
+# # Создаем директорию
+# os.mkdir("test_directory")
+#
+# # Переходим в созданную директорию
+# os.chdir("test_directory")
+#
+# # Создаем файл и записываем текст
+# with open("test_file.txt", "w") as file:
+#     file.write("Hello, World!")
+#
+# # Читаем содержимое файла
+# with open("test_file.txt", "r") as file:
+#     content = file.read()
+#     print("Содержимое файла:", content)
+#
+# # Удаляем файл
+# os.remove("test_file.txt")
+#
+# # Переходим на уровень выше и удаляем директорию
+# os.chdir("..")
+# os.rmdir("test_directory")
+
+# from datetime import date
+#
+# # Запросить у пользователя год, месяц и день его рождения
+# year = int(input("Введите год рождения: "))
+# month = int(input("Введите месяц рождения (1-12): "))
+# day = int(input("Введите день рождения (1-31): "))
+#
+# # Создать объект даты рождения
+# birth_date = date(year, month, day)
+#
+# # Получить текущую дату
+# current_date = date.today()
+#
+# # Вычислить разницу между текущей датой и датой рождения
+# days_difference = (current_date - birth_date).days
+#
+# # Вывести количество дней, прошедших с даты рождения
+# print(f"С даты вашего рождения прошло {days_difference} дней.")

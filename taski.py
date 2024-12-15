@@ -209,3 +209,137 @@ import os
 #
 # # Вывести количество дней, прошедших с даты рождения
 # print(f"С даты вашего рождения прошло {days_difference} дней.")
+
+# class Car:
+#     make = "атрибут мейк "
+#     model = 'атрибут модель'
+#     year = 'атрибут ер'
+#     def display_info(self):
+#         print(self.make, self.model, self.year)
+#
+# my_object = Car()
+# my_object.display_info()
+
+# class Library:
+#     books = ["золушка", "война миров"]  # Атрибут класса
+#     def add_book(self, book):
+#         self.books.append(book)  # Добавляем книгу в общий список
+#     def display_books(self):
+#         print(self.books)  # Печатаем список книг
+#
+# # Создаем объект класса Library
+# my_object = Library()
+# my_object.add_book("колобок")
+# my_object.display_books()
+
+
+# class Cat:
+#     pass
+# # Создание объекта Cat
+# barsik = Cat()
+# # Инициализация атрибутов после создания объекта
+# barsik.name = "Barsik"
+# barsik.age = 5
+# print(f"Имя кота: {barsik.name}, возраст: {barsik.age}")  # Вывод: Имя кота: Barsik, возраст: 5
+
+
+# class Cat:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+# # Создание объекта Cat с именем и возрастом
+# barsik = Cat("Barsik", 5)
+# print(f"Имя кота: {barsik.name}, возраст: {barsik.age}")  # Вывод: Имя кота: Barsik, возраст: 5
+
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#     def area(self):
+#         print(self.width * self.height)  # Используем атрибуты объекта
+# # Создаем объект класса Rectangle
+# square = Rectangle(6, 5)
+# # Вызываем метод area
+# square.area()
+
+# class BankAccount:
+#     def __init__(self, account_number, initial_balance):
+#         self.account_number = account_number
+#         self.balance = initial_balance  # Устанавливаем начальный баланс
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.balance += amount
+#             print(f"На счет {self.account_number} внесено {amount}. Текущий баланс: {self.balance}.")
+#         else:
+#             print("Сумма для пополнения должна быть больше нуля.")
+#     def withdraw(self, amount):
+#         if amount > self.balance:
+#             print(f"Недостаточно средств на счете {self.account_number}. Доступно: {self.balance}.")
+#         elif amount > 0:
+#             self.balance -= amount
+#             print(f"Со счета {self.account_number} снято {amount}. Текущий баланс: {self.balance}.")
+#         else:
+#             print("Сумма для снятия должна быть больше нуля.")
+# # Создание объекта BankAccount
+# my_account = BankAccount("123456789", 1000)
+# # Выполнение операций пополнения и снятия средств
+# my_account.deposit(500)      # Пополнение на 500
+# my_account.withdraw(200)     # Снятие 200
+# my_account.withdraw(1500)    # Попытка снять больше, чем есть на счете
+# my_account.deposit(-100)     # Попытка внести отрицательную сумму
+# my_account.withdraw(0)       # Попытка снять ноль
+
+# class MyClass:
+#     def __init__(self):
+#         self.__private_attribute = "I am private"
+# obj = MyClass()
+# print(dir(obj))
+
+# class Car:
+#     def __init__(self, brand, model):
+#         self.brand = brand      # Публичный атрибут
+#         self._model = model     # Защищенный атрибут
+#     # Метод для получения значения защищенного атрибута _model_
+#     def get_model(self):
+#         return self._model
+#     # Метод для установки значения защищенного атрибута _model_
+#     def set_model(self, model):
+#         if isinstance(model, str) and model.strip():  # Проверка, что значение является непустой строкой
+#             self._model = model
+#         else:
+#             print("Ошибка: Модель должна быть непустой строкой.")
+# # Создание объекта класса Car
+# my_car = Car("Toyota", "Corolla")
+# # Установка значений атрибутов
+# my_car.brand = "Honda"  # Изменение публичного атрибута brand
+# my_car.set_model("Civic")  # Установка нового значения для защищенного атрибута _model_
+# # Вывод значений атрибутов
+# print(f"Марка автомобиля: {my_car.brand}")  # Доступ к публичному атрибуту
+# print(f"Модель автомобиля: {my_car.get_model()}")  # Получение значения защищенного атрибута через метод
+
+
+# class Library:
+#     def __init__(self):
+#         self.books = []
+#     def add_book(self, book):
+#         if isinstance(book, str) and book.strip():
+#             self.books.append(book)
+#         else:
+#             print("Ошибка: Название книги должно быть непустой строкой.")
+#     def __str__(self):
+#         if self.books:
+#             books_list = "\n".join(self.books)
+#             return f"Библиотека содержит следующие книги:\n{books_list}"
+#         else:
+#             return "Библиотека пуста."
+#     def __len__(self):
+#         return len(self.books)
+# # Создаем объект библиотеки
+# library = Library()
+# # Добавляем книги в библиотеку
+# library.add_book("Harry Potter and the Philosopher's Stone")
+# library.add_book("The Great Gatsby")
+# library.add_book("1984")
+# # Выводим информацию о библиотеке с перечнем книг и количество книг
+# print(library)
+# print(f"Number of books in library: {len(library)}")

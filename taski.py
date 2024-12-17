@@ -343,3 +343,110 @@ import os
 # # Выводим информацию о библиотеке с перечнем книг и количество книг
 # print(library)
 # print(f"Number of books in library: {len(library)}")
+
+
+# class Animal:
+#     def speak(self):
+#         return "Some generic animal sound"
+##
+# class Dog(Animal):
+#     def speak(self):
+#         parent_speech = super().speak()  # Вызов метода родительского класса
+#         return f"{parent_speech} And the dog barks!"
+# dog = Dog()
+# print(dog.speak())
+#
+# class BankAccount:
+#     def __init__(self, balance):
+#         self.balance = balance
+##
+#     def withdraw(self, amount):
+#         if self.balance >= amount:
+#             self.balance -= amount
+#             return f"Withdrew {amount}. New balance: {self.balance}"
+#         return "Insufficient funds"
+##
+# class SavingsAccount(BankAccount):
+#     def withdraw(self, amount):
+#         if amount > 1000:
+#             return "Withdrawal limit exceeded"
+#         return super().withdraw(amount)  # Вызов метода родительского класса
+##
+# savings = SavingsAccount(1500)
+# print(savings.withdraw(500))  # Выведет: Withdrew 500. New balance: 1000
+# print(savings.withdraw(1500))  # Выведет: Withdrawal limit exceeded
+
+
+# class Employee:
+#     def get_salary(self):
+#         return 1000
+# class FullTimeEmployee(Employee):
+#     def get_salary(self):
+#         return 5000
+# class PartTimeEmployee(Employee):
+#     def get_salary(self):
+#         return 3000
+# class Intern(Employee):
+#     pass
+# def print_salary(employee):
+#     print(employee.get_salary())
+# employees = [FullTimeEmployee(), PartTimeEmployee(), Intern()]
+# for employee in employees:
+#     print_salary(employee)
+
+# import math
+# # Базовый класс Shape
+# class Shape:
+#     def area(self):
+#         """Метод для расчета площади. Должен быть переопределен в дочерних классах."""
+#         raise NotImplementedError("Метод area() должен быть переопределен в дочерних классах")
+# # Дочерний класс Circle
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
+#     def area(self):
+#         """Переопределение метода для расчета площади круга."""
+#         return math.pi * self.radius ** 2
+# # Дочерний класс Rectangle
+# class Rectangle(Shape):
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#     def area(self):
+#         """Переопределение метода для расчета площади прямоугольника."""
+#         return self.width * self.height
+# # Использование полиморфизма для работы с объектами разных классов
+# shapes = [
+#     Circle(5),        # Создание круга с радиусом 5
+#     Rectangle(4, 6),  # Создание прямоугольника со сторонами 4 и 6
+#     Circle(3),        # Создание круга с радиусом 3
+#     Rectangle(2, 7)   # Создание прямоугольника со сторонами 2 и 7
+# ]
+# # Вычисление и вывод площадей всех фигур
+# for shape in shapes:
+#     print(f"Площадь {shape.__class__.__name__}: {shape.area():.2f}")
+
+#
+# # Определяем первый декоратор
+# def decorator1(func):
+#     def wrapper(*args, **kwargs):
+#         print("Вызов decorator1: перед выполнением функции.")
+#         result = func(*args, **kwargs)
+#         print("Вызов decorator1: после выполнения функции.")
+#         return result
+#     return wrapper
+# # Определяем второй декоратор
+# def decorator2(func):
+#     def wrapper(*args, **kwargs):
+#         print("Вызов decorator2: перед выполнением функции.")
+#         result = func(*args, **kwargs)
+#         print("Вызов decorator2: после выполнения функции.")
+#         return result
+#     return wrapper
+# # Применяем декораторы к функции
+# @decorator1
+# @decorator2
+# def say_hello():
+#     print("Привет! Я функция say_hello.")
+# # Вызов функции
+# say_hello()
